@@ -1,0 +1,24 @@
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+
+# Classpath genere pour l'execution de TestHibernate
+cp.txt
+
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+.settings/
+.classpath
+.project
+.vscode/
+
+# Logs et divers
+*.log
+!docs/*.log

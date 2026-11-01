@@ -1,0 +1,288 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------< com.microservice:microservice-product >----------------
+[INFO] Building microservice-product 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[WARNING] The artifact mysql:mysql-connector-java:jar:8.0.33 has been relocated to com.mysql:mysql-connector-j:jar:8.0.33: MySQL Connector/J artifacts moved to reverse-DNS compliant Maven 2+ coordinates.
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ microservice-product ---
+[INFO] Deleting C:\Users\DELL\Desktop\lab5Microservice\target
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ microservice-product ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ microservice-product ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 11 source files with javac [debug target 11] to target\classes
+[WARNING] system modules path not set in conjunction with -source 11
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ microservice-product ---
+[INFO] skip non existing resourceDirectory C:\Users\DELL\Desktop\lab5Microservice\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ microservice-product ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 2 source files with javac [debug target 11] to target\test-classes
+[WARNING] system modules path not set in conjunction with -source 11
+[INFO] 
+[INFO] --- surefire:3.1.2:test (default-test) @ microservice-product ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.microservice.product.ProductServiceTest
+nov. 01, 2026 9:53:21 PM org.springframework.test.context.support.AbstractTestContextBootstrapper getDefaultTestExecutionListenerClassNames
+INFO: Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+nov. 01, 2026 9:53:21 PM org.springframework.test.context.support.AbstractTestContextBootstrapper getTestExecutionListeners
+INFO: Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@bd4dc25, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@25084a1e, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@156b88f5, org.springframework.test.context.support.DirtiesContextTestExecutionListener@3bf9ce3e, org.springframework.test.context.transaction.TransactionalTestExecutionListener@16610890, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@71def8f8, org.springframework.test.context.event.EventPublishingTestExecutionListener@383bfa16]
+nov. 01, 2026 9:53:22 PM org.hibernate.Version logVersion
+INFO: HHH000412: Hibernate ORM core version 5.6.9.Final
+nov. 01, 2026 9:53:22 PM org.hibernate.annotations.common.reflection.java.JavaReflectionManager <clinit>
+INFO: HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+nov. 01, 2026 9:53:22 PM org.hibernate.dialect.Dialect <init>
+INFO: HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+Hibernate: 
+    
+    create table products (
+       id bigint not null auto_increment,
+        name varchar(255) not null,
+        price double precision not null,
+        primary key (id)
+    ) engine=InnoDB
+nov. 01, 2026 9:53:23 PM org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator initiateService
+INFO: HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+nov. 01, 2026 9:53:23 PM org.springframework.test.context.transaction.TransactionContext startTransaction
+INFO: Began transaction (1) for test context [DefaultTestContext@1a531422 testClass = ProductServiceTest, testInstance = com.microservice.product.ProductServiceTest@7a388990, testMethod = getProductsByNameRetrouveLeProduit@ProductServiceTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@13213f26 testClass = ProductServiceTest, locations = '{}', classes = '{class com.microservice.product.config.AppConfig}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]], attributes = map['org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]; transaction manager [org.springframework.orm.hibernate5.HibernateTransactionManager@739265f1]; rollback [true]
+Hibernate: 
+    insert 
+    into
+        products
+        (name, price) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        products
+        (name, price) 
+    values
+        (?, ?)
+Hibernate: 
+    select
+        product0_.id as id1_0_,
+        product0_.name as name2_0_,
+        product0_.price as price3_0_ 
+    from
+        products product0_ 
+    where
+        lower(product0_.name)=lower(?) 
+    order by
+        product0_.id
+nov. 01, 2026 9:53:23 PM org.springframework.test.context.transaction.TransactionContext endTransaction
+INFO: Rolled back transaction for test: [DefaultTestContext@1a531422 testClass = ProductServiceTest, testInstance = com.microservice.product.ProductServiceTest@7a388990, testMethod = getProductsByNameRetrouveLeProduit@ProductServiceTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@13213f26 testClass = ProductServiceTest, locations = '{}', classes = '{class com.microservice.product.config.AppConfig}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]], attributes = map['org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]
+nov. 01, 2026 9:53:23 PM org.springframework.test.context.transaction.TransactionContext startTransaction
+INFO: Began transaction (1) for test context [DefaultTestContext@1a531422 testClass = ProductServiceTest, testInstance = com.microservice.product.ProductServiceTest@21274afe, testMethod = addProductRefuseUnNomVide@ProductServiceTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@13213f26 testClass = ProductServiceTest, locations = '{}', classes = '{class com.microservice.product.config.AppConfig}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]], attributes = map['org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]; transaction manager [org.springframework.orm.hibernate5.HibernateTransactionManager@739265f1]; rollback [true]
+nov. 01, 2026 9:53:23 PM org.springframework.test.context.transaction.TransactionContext endTransaction
+INFO: Rolled back transaction for test: [DefaultTestContext@1a531422 testClass = ProductServiceTest, testInstance = com.microservice.product.ProductServiceTest@21274afe, testMethod = addProductRefuseUnNomVide@ProductServiceTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@13213f26 testClass = ProductServiceTest, locations = '{}', classes = '{class com.microservice.product.config.AppConfig}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]], attributes = map['org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]
+nov. 01, 2026 9:53:23 PM org.springframework.test.context.transaction.TransactionContext startTransaction
+INFO: Began transaction (1) for test context [DefaultTestContext@1a531422 testClass = ProductServiceTest, testInstance = com.microservice.product.ProductServiceTest@4bc9ca97, testMethod = getProductsByNameRetourneListeVide@ProductServiceTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@13213f26 testClass = ProductServiceTest, locations = '{}', classes = '{class com.microservice.product.config.AppConfig}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]], attributes = map['org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]; transaction manager [org.springframework.orm.hibernate5.HibernateTransactionManager@739265f1]; rollback [true]
+Hibernate: 
+    select
+        product0_.id as id1_0_,
+        product0_.name as name2_0_,
+        product0_.price as price3_0_ 
+    from
+        products product0_ 
+    where
+        lower(product0_.name)=lower(?) 
+    order by
+        product0_.id
+nov. 01, 2026 9:53:23 PM org.springframework.test.context.transaction.TransactionContext endTransaction
+INFO: Rolled back transaction for test: [DefaultTestContext@1a531422 testClass = ProductServiceTest, testInstance = com.microservice.product.ProductServiceTest@4bc9ca97, testMethod = getProductsByNameRetourneListeVide@ProductServiceTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@13213f26 testClass = ProductServiceTest, locations = '{}', classes = '{class com.microservice.product.config.AppConfig}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]], attributes = map['org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]
+nov. 01, 2026 9:53:23 PM org.springframework.test.context.transaction.TransactionContext startTransaction
+INFO: Began transaction (1) for test context [DefaultTestContext@1a531422 testClass = ProductServiceTest, testInstance = com.microservice.product.ProductServiceTest@2c8b8de0, testMethod = countProductsCompteLesProduits@ProductServiceTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@13213f26 testClass = ProductServiceTest, locations = '{}', classes = '{class com.microservice.product.config.AppConfig}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]], attributes = map['org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]; transaction manager [org.springframework.orm.hibernate5.HibernateTransactionManager@739265f1]; rollback [true]
+Hibernate: 
+    select
+        count(product0_.id) as col_0_0_ 
+    from
+        products product0_
+Hibernate: 
+    insert 
+    into
+        products
+        (name, price) 
+    values
+        (?, ?)
+Hibernate: 
+    select
+        count(product0_.id) as col_0_0_ 
+    from
+        products product0_
+Hibernate: 
+    select
+        product0_.id as id1_0_,
+        product0_.name as name2_0_,
+        product0_.price as price3_0_ 
+    from
+        products product0_ 
+    order by
+        product0_.id
+nov. 01, 2026 9:53:23 PM org.springframework.test.context.transaction.TransactionContext endTransaction
+INFO: Rolled back transaction for test: [DefaultTestContext@1a531422 testClass = ProductServiceTest, testInstance = com.microservice.product.ProductServiceTest@2c8b8de0, testMethod = countProductsCompteLesProduits@ProductServiceTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@13213f26 testClass = ProductServiceTest, locations = '{}', classes = '{class com.microservice.product.config.AppConfig}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]], attributes = map['org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]
+nov. 01, 2026 9:53:23 PM org.springframework.test.context.transaction.TransactionContext startTransaction
+INFO: Began transaction (1) for test context [DefaultTestContext@1a531422 testClass = ProductServiceTest, testInstance = com.microservice.product.ProductServiceTest@26b3c9a2, testMethod = getProductRetourneNullSiInconnu@ProductServiceTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@13213f26 testClass = ProductServiceTest, locations = '{}', classes = '{class com.microservice.product.config.AppConfig}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]], attributes = map['org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]; transaction manager [org.springframework.orm.hibernate5.HibernateTransactionManager@739265f1]; rollback [true]
+Hibernate: 
+    select
+        product0_.id as id1_0_0_,
+        product0_.name as name2_0_0_,
+        product0_.price as price3_0_0_ 
+    from
+        products product0_ 
+    where
+        product0_.id=?
+nov. 01, 2026 9:53:23 PM org.springframework.test.context.transaction.TransactionContext endTransaction
+INFO: Rolled back transaction for test: [DefaultTestContext@1a531422 testClass = ProductServiceTest, testInstance = com.microservice.product.ProductServiceTest@26b3c9a2, testMethod = getProductRetourneNullSiInconnu@ProductServiceTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@13213f26 testClass = ProductServiceTest, locations = '{}', classes = '{class com.microservice.product.config.AppConfig}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]], attributes = map['org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]
+nov. 01, 2026 9:53:23 PM org.springframework.test.context.transaction.TransactionContext startTransaction
+INFO: Began transaction (1) for test context [DefaultTestContext@1a531422 testClass = ProductServiceTest, testInstance = com.microservice.product.ProductServiceTest@72c4a3aa, testMethod = deleteProductSupprimeLeProduit@ProductServiceTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@13213f26 testClass = ProductServiceTest, locations = '{}', classes = '{class com.microservice.product.config.AppConfig}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]], attributes = map['org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]; transaction manager [org.springframework.orm.hibernate5.HibernateTransactionManager@739265f1]; rollback [true]
+Hibernate: 
+    insert 
+    into
+        products
+        (name, price) 
+    values
+        (?, ?)
+nov. 01, 2026 9:53:23 PM org.springframework.test.context.transaction.TransactionContext endTransaction
+INFO: Rolled back transaction for test: [DefaultTestContext@1a531422 testClass = ProductServiceTest, testInstance = com.microservice.product.ProductServiceTest@72c4a3aa, testMethod = deleteProductSupprimeLeProduit@ProductServiceTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@13213f26 testClass = ProductServiceTest, locations = '{}', classes = '{class com.microservice.product.config.AppConfig}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]], attributes = map['org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]
+nov. 01, 2026 9:53:23 PM org.springframework.test.context.transaction.TransactionContext startTransaction
+INFO: Began transaction (1) for test context [DefaultTestContext@1a531422 testClass = ProductServiceTest, testInstance = com.microservice.product.ProductServiceTest@656c5c3, testMethod = getAllProductsRetourneLesProduits@ProductServiceTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@13213f26 testClass = ProductServiceTest, locations = '{}', classes = '{class com.microservice.product.config.AppConfig}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]], attributes = map['org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]; transaction manager [org.springframework.orm.hibernate5.HibernateTransactionManager@739265f1]; rollback [true]
+Hibernate: 
+    insert 
+    into
+        products
+        (name, price) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        products
+        (name, price) 
+    values
+        (?, ?)
+Hibernate: 
+    select
+        product0_.id as id1_0_,
+        product0_.name as name2_0_,
+        product0_.price as price3_0_ 
+    from
+        products product0_ 
+    order by
+        product0_.id
+nov. 01, 2026 9:53:23 PM org.springframework.test.context.transaction.TransactionContext endTransaction
+INFO: Rolled back transaction for test: [DefaultTestContext@1a531422 testClass = ProductServiceTest, testInstance = com.microservice.product.ProductServiceTest@656c5c3, testMethod = getAllProductsRetourneLesProduits@ProductServiceTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@13213f26 testClass = ProductServiceTest, locations = '{}', classes = '{class com.microservice.product.config.AppConfig}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]], attributes = map['org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]
+nov. 01, 2026 9:53:23 PM org.springframework.test.context.transaction.TransactionContext startTransaction
+INFO: Began transaction (1) for test context [DefaultTestContext@1a531422 testClass = ProductServiceTest, testInstance = com.microservice.product.ProductServiceTest@5864e8bf, testMethod = addProductEnregistreLeProduit@ProductServiceTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@13213f26 testClass = ProductServiceTest, locations = '{}', classes = '{class com.microservice.product.config.AppConfig}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]], attributes = map['org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]; transaction manager [org.springframework.orm.hibernate5.HibernateTransactionManager@739265f1]; rollback [true]
+Hibernate: 
+    insert 
+    into
+        products
+        (name, price) 
+    values
+        (?, ?)
+nov. 01, 2026 9:53:23 PM org.springframework.test.context.transaction.TransactionContext endTransaction
+INFO: Rolled back transaction for test: [DefaultTestContext@1a531422 testClass = ProductServiceTest, testInstance = com.microservice.product.ProductServiceTest@5864e8bf, testMethod = addProductEnregistreLeProduit@ProductServiceTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@13213f26 testClass = ProductServiceTest, locations = '{}', classes = '{class com.microservice.product.config.AppConfig}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]], attributes = map['org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]
+nov. 01, 2026 9:53:23 PM org.springframework.test.context.transaction.TransactionContext startTransaction
+INFO: Began transaction (1) for test context [DefaultTestContext@1a531422 testClass = ProductServiceTest, testInstance = com.microservice.product.ProductServiceTest@ef86c72, testMethod = addProductRefuseUnPrixNegatif@ProductServiceTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@13213f26 testClass = ProductServiceTest, locations = '{}', classes = '{class com.microservice.product.config.AppConfig}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]], attributes = map['org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]; transaction manager [org.springframework.orm.hibernate5.HibernateTransactionManager@739265f1]; rollback [true]
+nov. 01, 2026 9:53:23 PM org.springframework.test.context.transaction.TransactionContext endTransaction
+INFO: Rolled back transaction for test: [DefaultTestContext@1a531422 testClass = ProductServiceTest, testInstance = com.microservice.product.ProductServiceTest@ef86c72, testMethod = addProductRefuseUnPrixNegatif@ProductServiceTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@13213f26 testClass = ProductServiceTest, locations = '{}', classes = '{class com.microservice.product.config.AppConfig}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]], attributes = map['org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]
+nov. 01, 2026 9:53:23 PM org.springframework.test.context.transaction.TransactionContext startTransaction
+INFO: Began transaction (1) for test context [DefaultTestContext@1a531422 testClass = ProductServiceTest, testInstance = com.microservice.product.ProductServiceTest@47058864, testMethod = updateProductMetAJourLePrix@ProductServiceTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@13213f26 testClass = ProductServiceTest, locations = '{}', classes = '{class com.microservice.product.config.AppConfig}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]], attributes = map['org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]; transaction manager [org.springframework.orm.hibernate5.HibernateTransactionManager@739265f1]; rollback [true]
+Hibernate: 
+    insert 
+    into
+        products
+        (name, price) 
+    values
+        (?, ?)
+nov. 01, 2026 9:53:23 PM org.springframework.test.context.transaction.TransactionContext endTransaction
+INFO: Rolled back transaction for test: [DefaultTestContext@1a531422 testClass = ProductServiceTest, testInstance = com.microservice.product.ProductServiceTest@47058864, testMethod = updateProductMetAJourLePrix@ProductServiceTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@13213f26 testClass = ProductServiceTest, locations = '{}', classes = '{class com.microservice.product.config.AppConfig}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]], attributes = map['org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]
+[INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.796 s -- in com.microservice.product.ProductServiceTest
+[INFO] Running com.microservice.product.SpringContextTest
+nov. 01, 2026 9:53:23 PM org.springframework.test.context.support.AbstractTestContextBootstrapper getDefaultTestExecutionListenerClassNames
+INFO: Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+nov. 01, 2026 9:53:23 PM org.springframework.test.context.support.AbstractTestContextBootstrapper getTestExecutionListeners
+INFO: Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@3f68a7f8, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@4faf1f4, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@4f811029, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7f2b584b, org.springframework.test.context.transaction.TransactionalTestExecutionListener@5866731, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@56a05324, org.springframework.test.context.event.EventPublishingTestExecutionListener@11e71181]
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.031 s -- in com.microservice.product.SpringContextTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 15, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- exec:3.1.0:java (default-cli) @ microservice-product ---
+nov. 01, 2026 9:53:24 PM org.hibernate.Version logVersion
+INFO: HHH000412: Hibernate ORM core version 5.6.9.Final
+nov. 01, 2026 9:53:24 PM org.hibernate.annotations.common.reflection.java.JavaReflectionManager <clinit>
+INFO: HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+nov. 01, 2026 9:53:24 PM org.hibernate.dialect.Dialect <init>
+INFO: HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+nov. 01, 2026 9:53:24 PM org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator initiateService
+INFO: HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+Hibernate: 
+    insert 
+    into
+        products
+        (name, price) 
+    values
+        (?, ?)
+Produit ajoute avec succes ! Identifiant genere : 9
+Hibernate: 
+    select
+        count(product0_.id) as col_0_0_ 
+    from
+        products product0_
+Total en base : 1
+--- Liste des produits ---
+Hibernate: 
+    select
+        product0_.id as id1_0_,
+        product0_.name as name2_0_,
+        product0_.price as price3_0_ 
+    from
+        products product0_ 
+    order by
+        product0_.id
+Product{id=9, name='Microservice Gateway', price=149.99}
+Hibernate: 
+    update
+        products 
+    set
+        name=?,
+        price=? 
+    where
+        id=?
+Hibernate: 
+    select
+        product0_.id as id1_0_0_,
+        product0_.name as name2_0_0_,
+        product0_.price as price3_0_0_ 
+    from
+        products product0_ 
+    where
+        product0_.id=?
+Prix mis a jour : 199.99
+--- Test du rollback transactionnel ---
+Produit refuse par la couche service : Le prix ne peut pas etre negatif
+Hibernate: 
+    select
+        count(product0_.id) as col_0_0_ 
+    from
+        products product0_
+Total en base apres le refus : 1
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  6.673 s
+[INFO] Finished at: 2026-11-01T21:53:25+01:00
+[INFO] ------------------------------------------------------------------------

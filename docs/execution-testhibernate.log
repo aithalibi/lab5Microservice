@@ -1,0 +1,19 @@
+nov. 01, 2026 9:53:26 PM org.hibernate.Version logVersion
+INFO: HHH000412: Hibernate ORM core version 5.6.9.Final
+nov. 01, 2026 9:53:26 PM org.hibernate.annotations.common.reflection.java.JavaReflectionManager <clinit>
+INFO: HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+nov. 01, 2026 9:53:26 PM org.hibernate.dialect.Dialect <init>
+INFO: HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+nov. 01, 2026 9:53:27 PM org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator initiateService
+INFO: HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+Contexte Spring initialise avec succes !
+Nombre de beans declares : 19
+SessionFactory initialisee : true
+Dialecte Hibernate           : org.hibernate.dialect.MySQL8Dialect
+Connexion JDBC operationnelle : MySQL 5.5.5-10.4.32-MariaDB
+Hibernate: 
+    select
+        count(product0_.id) as col_0_0_ 
+    from
+        products product0_
+Produits presents en base    : 1
